@@ -11,16 +11,16 @@ class FeedbackSys(EqualityCheckProblem):
     _var = 'one'
     _expected = 1
     _hint = ("Quantas luas a Terra tem?")
-    _solution = CS('one = 1')
+    _solution = CS('uma só = 1')
     
 class LoadFIFAData(EqualityCheckProblem):
     _var = 'fifa_data'
     _expected = df
-    _hint = ("Use `pd.read_csv`, and follow it with **three** pieces of text that "
-             "are enclosed in parentheses and separated by commas.  (1) The "
-             "filepath for the dataset is provided in `fifa_filepath`.  (2) Use "
-             "the `\"Date\"` column to label the rows. (3) Make sure that the row "
-             "labels are recognized as dates.")
+    _hint = ("Use `pd.read_csv`, seguido pelos **três** trechos de código que "
+             "estão colocados entre parênteses e separados por vírgulas. (1) O "
+             "filepath para o dataset é especificado em `fifa_filepath`.  (2) Use "
+             "a coluna `\"Date\"` para rotular as linhas. (3) Certifique-se de que os "
+             "rótulos das linhas sejam reconhecidos como datas.")
     _solution = CS('fifa_data = pd.read_csv(fifa_filepath, index_col="Date", parse_dates=True)')
 
 class PlotLine(CodingProblem):
@@ -28,10 +28,10 @@ class PlotLine(CodingProblem):
     _hint = ("Consulte o tutorial para ver a solução. A linha de código que você precisa "
              " para preencher começa com `sns.lineplot`.")
     _solution = CS(
-"""# Set the width and height of the figure
+"""# Define a largura e a altura da figura
 plt.figure(figsize=(16,6))
 
-# Line chart showing how FIFA rankings evolved over time
+# Gráfico de linhas mostrando a evolução dos rankings da FIFA ao longo do tempo
 sns.lineplot(data=fifa_data)
 """)
     
